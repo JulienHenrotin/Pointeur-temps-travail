@@ -1,0 +1,46 @@
+Prompt Phase 0 - Fondations:
+Tu es un lead developer chargé de préparer l’infrastructure d’un outil de suivi du temps de travail. Objectif: livrer l’architecture, la structure de données (JourTravail, Session) et les outils de qualité. Détails:
+- Mettre en place le dépôt (lint, format, tests, scripts).
+- Choisir la stack (front/back ou framework desktop) et justifier les choix.
+- Implémenter la persistance locale (JSON ou SQLite) avec une couche d’abstraction.
+- Livrer un README de setup et un plan de tests automatisés.
+Contraintes: code proprement typé, modularité pour réutiliser la couche métier, aucune dépendance cloud obligatoire.
+
+Prompt Version 1.0 - Saisie et calcul du temps:
+Tu développes la première itération fonctionnelle de l’outil. Objectifs:
+- Formulaire permettant de saisir heure de début, fin, pause et de calculer le total journalier.
+- Stockage local persistant de chaque jour.
+- Bouton “ouvrir les fichiers” vers le dossier des données.
+Livrables attendus: composants UI, validations métier, module de stockage, retours d’état (chargement/succès/erreur) et tests (unitaires + un flux fonctionnel complet).
+Contraintes: réutiliser la couche fondation, gérer les erreurs utilisateurs (valeurs vides, chevauchements), documenter le format des données.
+
+Prompt Version 1.1 - Services d’export:
+Ton rôle est d’ajouter trois services d’export (CSV, TXT tabulaire, TXT liste) à partir des données existantes. Livrables:
+- Définition exacte des formats (colonnes, séparateurs, en-têtes).
+- Conversion factorisée et tests vérifiant l’intégrité des fichiers générés.
+- UI/boutons pour déclencher chaque export avec messages succès/erreur.
+Contraintes: fichiers cohérents entre eux, gestion des fichiers déjà ouverts, documentation utilisateur.
+
+Prompt Version 1.2 - Historique et indicateurs:
+Ajoute un tableau de bord léger. Objectifs:
+- Widget d’état global (chargement, résumé).
+- Liste des 5 derniers jours avec totaux.
+- Prévisionnel du jour après saisie de l’arrivée.
+Livrables: composants UI, service d’agrégation (dernières entrées, reste à faire), mécanisme de cache/loader, tests des calculs et de l’affichage conditionnel.
+Contraintes: historique toujours à jour après saisie/édition, prise en charge des états (idle/loading/success/error).
+
+Prompt Version 1.3 - Edition historique:
+Implémente l’édition de jours passés via modal et calendrier coloré. Livrables:
+- Composant calendrier avec code couleur selon le temps travaillé.
+- Modal préremplie, indicateurs de chargement et confirmation.
+- Mise à jour temps réel des vues et exports.
+- Tests d’interaction (sélection jour, sauvegarde, conflits).
+Contraintes: aucune recharge manuelle nécessaire, couleur cohérente sur plusieurs semaines.
+
+Prompt Version 1.4 - Automatisations et bonus:
+Ajoute les intégrations bonus. Objectifs:
+- Notifications (email, Discord, Drive) basées sur les exports.
+- Système de logs robuste.
+- Statistiques hebdomadaires/mensuelles et calendrier récapitulatif.
+Livrables: service de notification paramétrable, librairie de logging (rotation), calculs d’agrégats, planification d’envoi, tests avec mocks pour les intégrations externes.
+Contraintes: sécuriser les secrets, gérer les erreurs réseau, fournir des jeux de données/tests pour valider les stats.
