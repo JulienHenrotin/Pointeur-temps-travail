@@ -1,0 +1,6 @@
+Fichier 
+* 1 service CSV
+* 1 service TXT tableau 
+* 1 service TXT llste 
+* info a noter dans fichier : date debut , date fin , pause , total
+
